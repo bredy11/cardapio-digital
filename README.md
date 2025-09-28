@@ -67,6 +67,8 @@ flowchart TD
 
     M[shared] --> N[exception]
     M --> O[utils]
+
+
 # 🗄️ Banco de Dados - Cardápio Digital
 
 Este documento descreve o **modelo de banco de dados** utilizado no projeto **Cardápio Digital**.  
