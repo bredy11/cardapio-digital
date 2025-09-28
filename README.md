@@ -67,10 +67,7 @@ flowchart TD
 
     M[shared] --> N[exception]
     M --> O[utils]
-
----
-`
-
+```
 
 # 🗄️ Banco de Dados - Cardápio Digital
 
