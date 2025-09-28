@@ -68,13 +68,14 @@ flowchart TD
     M[shared] --> N[exception]
     M --> O[utils]
 
+---
 
 # 🗄️ Banco de Dados - Cardápio Digital
 
 Este documento descreve o **modelo de banco de dados** utilizado no projeto **Cardápio Digital**.  
 O banco é **PostgreSQL** e foi projetado para armazenar informações de usuários, comércios, cardápios e produtos, permitindo que clientes consultem cardápios online.
 
----
+
 
 ## 🏛️ Estrutura de Tabelas
 
