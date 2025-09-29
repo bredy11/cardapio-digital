@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "cardapio")
 public class Cardapio implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +27,7 @@ public class Cardapio implements Serializable {
     @Column(nullable = false, length = 100)
     private String nome;
 
-    @Column(name = "data_criacao", nullable = false, updatable = false)
+    @Column(name = "data_criacao", updatable = false)
     private LocalDateTime dataCriacao;
 
     @PrePersist
