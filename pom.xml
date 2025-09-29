@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.comanda-digital</groupId>
 	<artifactId>comanda-digital</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>comanda-digital</name>
 	<description>sistema de controle de comandas</description>
 	<url/>
