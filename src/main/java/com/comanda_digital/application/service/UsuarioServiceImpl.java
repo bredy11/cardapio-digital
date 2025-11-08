@@ -17,6 +17,8 @@ import java.util.Optional;
 @Service
 public class UsuarioServiceImpl implements UsuarioServicePort {
 
+    public static final String STATUS = "ATIVO";
+    public static final String ERRO_AO_FAZER_HASH_DA_SENHA = "Erro ao fazer hash da senha";
     private final UsuarioRepository usuarioRepository;
 
     public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
@@ -35,7 +37,7 @@ public class UsuarioServiceImpl implements UsuarioServicePort {
         usuario.setEmail(usuarioRequestDTO.getEmail());
         usuario.setSenha(hashPassword(usuarioRequestDTO.getSenha()));
         usuario.setTelefone(usuarioRequestDTO.getTelefone());
-        usuario.setStatus("ATIVO");
+        usuario.setStatus(STATUS);
         usuario.setDataCriacao(LocalDateTime.now());
 
         Usuario savedUsuario = usuarioRepository.save(usuario);
@@ -60,7 +62,7 @@ public class UsuarioServiceImpl implements UsuarioServicePort {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Erro ao fazer hash da senha", e);
+            throw new RuntimeException(ERRO_AO_FAZER_HASH_DA_SENHA, e);
         }
     }
 }
