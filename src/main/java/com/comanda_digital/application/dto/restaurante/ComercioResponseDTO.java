@@ -22,6 +22,7 @@ public class ComercioResponseDTO implements Serializable {
     private String instagram;
     private String facebock;
     private String whatsapp;
+    private String imagem;
 
 
 }
