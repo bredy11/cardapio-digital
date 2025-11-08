@@ -41,6 +41,9 @@ public class Comercio implements Serializable {
     @Column(name = "data_criacao", nullable = false, updatable = false)
     private LocalDateTime dataCriacao;
 
+    @Column(length = 255)
+    private String urlImagem;
+
     @PrePersist
     protected void onCreate() {
         dataCriacao = LocalDateTime.now();
