@@ -25,16 +25,10 @@ public class ComercioController {
     private ComercioServicePort comercioServicePort;
 
 
-
     @Operation(summary = "Cadastra um novo comercio", description = "Cria um novo comercio no sistema")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Comercio cadastrado com sucesso"),
-            @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos"),
-    })
-    @PostMapping(consumes = "multipart/form-data")
-    public ResponseEntity<ComercioResponseDTO> cadastrarComercio(@RequestPart("comercio") ComercioRequestDTO comercioRequestDTO,
-                                                                 @RequestPart("imagem") MultipartFile imagem) {
-        comercioRequestDTO.setImagem(imagem);
+    @ApiResponses(value = {@ApiResponse(responseCode = "201", description = "Comercio cadastrado com sucesso"), @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos"),})
+    @PostMapping
+    public ResponseEntity<ComercioResponseDTO> cadastrarComercio(@RequestBody ComercioRequestDTO comercioRequestDTO) {
         ComercioResponseDTO responseDTO = comercioServicePort.cadastrarComercio(comercioRequestDTO);
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }

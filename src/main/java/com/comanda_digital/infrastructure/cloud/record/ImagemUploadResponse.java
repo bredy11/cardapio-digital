@@ -1,4 +1,4 @@
-package com.comanda_digital.infrastructure.cloud;
+package com.comanda_digital.infrastructure.cloud.record;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

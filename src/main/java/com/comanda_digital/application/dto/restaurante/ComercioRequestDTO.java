@@ -53,5 +53,5 @@ public class ComercioRequestDTO implements Serializable {
 
     private String complemento;
 
-    private MultipartFile imagem;
+    private String imagemBase64;
 }

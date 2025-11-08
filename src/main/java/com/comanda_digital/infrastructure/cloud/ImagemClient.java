@@ -1,17 +1,15 @@
 package com.comanda_digital.infrastructure.cloud;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
+import com.comanda_digital.infrastructure.cloud.record.ImagemUploadRequest;
+import com.comanda_digital.infrastructure.cloud.record.ImagemUploadResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "imagem-service", url = "http://localhost:8081/v1/imagem")
 public interface ImagemClient {
 
-    @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    ImagemUploadResponse uploadImagem(@RequestPart("arquivo") MultipartFile arquivo, @RequestParam("usuarioId") Long usuarioId);
+    @PostMapping(value = "/upload", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    ImagemUploadResponse uploadImagem(@RequestBody ImagemUploadRequest imagemUploadRequest);
 }

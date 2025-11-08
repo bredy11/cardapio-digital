@@ -42,7 +42,7 @@ public class Comercio implements Serializable {
     private LocalDateTime dataCriacao;
 
     @Column(length = 255)
-    private String imagem;
+    private String urlImagem;
 
     @PrePersist
     protected void onCreate() {
