@@ -1,7 +1,7 @@
 package com.comanda_digital.infrastructure.rest;
 
-import com.comanda_digital.application.dto.UsuarioRequestDTO;
-import com.comanda_digital.application.dto.UsuarioResponseDTO;
+import com.comanda_digital.application.dto.usuario.UsuarioRequestDTO;
+import com.comanda_digital.application.dto.usuario.UsuarioResponseDTO;
 import com.comanda_digital.application.port.UsuarioServicePort;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/usuarios")
 @Tag(name = "Usuários", description = "Operações relacionadas a usuários")

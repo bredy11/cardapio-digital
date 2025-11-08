@@ -1,4 +1,4 @@
-package com.comanda_digital.application.dto;
+package com.comanda_digital.application.dto.usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

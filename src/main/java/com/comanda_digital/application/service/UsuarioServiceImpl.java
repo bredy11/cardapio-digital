@@ -1,7 +1,7 @@
 package com.comanda_digital.application.service;
 
-import com.comanda_digital.application.dto.UsuarioRequestDTO;
-import com.comanda_digital.application.dto.UsuarioResponseDTO;
+import com.comanda_digital.application.dto.usuario.UsuarioRequestDTO;
+import com.comanda_digital.application.dto.usuario.UsuarioResponseDTO;
 import com.comanda_digital.application.port.UsuarioServicePort;
 import com.comanda_digital.domain.model.Usuario;
 import com.comanda_digital.infrastructure.persistence.UsuarioRepository;
