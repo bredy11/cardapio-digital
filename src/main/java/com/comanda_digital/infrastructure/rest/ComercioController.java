@@ -12,10 +12,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @CrossOrigin
 @RestController
@@ -33,8 +31,10 @@ public class ComercioController {
             @ApiResponse(responseCode = "201", description = "Comercio cadastrado com sucesso"),
             @ApiResponse(responseCode = "400", description = "Dados de entrada inválidos"),
     })
-    @PostMapping
-    public ResponseEntity<ComercioResponseDTO> cadastrarComercio(ComercioRequestDTO comercioRequestDTO) {
+    @PostMapping(consumes = "multipart/form-data")
+    public ResponseEntity<ComercioResponseDTO> cadastrarComercio(@RequestPart("comercio") ComercioRequestDTO comercioRequestDTO,
+                                                                 @RequestPart("imagem") MultipartFile imagem) {
+        comercioRequestDTO.setImagem(imagem);
         ComercioResponseDTO responseDTO = comercioServicePort.cadastrarComercio(comercioRequestDTO);
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
