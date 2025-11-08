@@ -42,9 +42,7 @@ public class ComercioServiceImpl implements ComercioServicePort {
         comercio.setWhatsapp(comercioRequestDTO.getWhatsapp());
         comercio.setDataCriacao(LocalDateTime.now());
 
-
         comercio = comercioRepository.save(comercio);
-
         return new ComercioResponseDTO(comercio.getId(), comercio.getUsuario().getId(), comercio.getNome(), comercio.getTipo().getNome(), comercio.getInstagram(), comercio.getFacebook(), comercio.getWhatsapp());
     }
 }
