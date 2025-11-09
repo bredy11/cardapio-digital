@@ -2,6 +2,7 @@ package com.comanda_digital.application.dto.restaurante;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import com.comanda_digital.application.dto.endereco.EnderecoDTO;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -44,6 +44,9 @@ public class Comercio implements Serializable {
     @Column(length = 255)
     private String urlImagem;
 
+    @OneToOne(mappedBy = "comercio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Endereco endereco;
+
     @PrePersist
     protected void onCreate() {
         dataCriacao = LocalDateTime.now();

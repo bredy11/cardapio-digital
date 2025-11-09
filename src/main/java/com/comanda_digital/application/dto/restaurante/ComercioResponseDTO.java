@@ -20,9 +20,10 @@ public class ComercioResponseDTO implements Serializable {
     private String nome;
     private String tipo;
     private String instagram;
-    private String facebock;
+    private String facebook;
     private String whatsapp;
-    private String imagem;
+    private String urlImagem;
+    private com.comanda_digital.application.dto.endereco.EnderecoDTO endereco;
 
 
 }
